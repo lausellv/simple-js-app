@@ -13,4 +13,7 @@ let minSize = (doubleSize * 2) - (size / 2);
 // document.write(minSize);
 document.write(doubleSize)
 
+let favoriteFood = "Spinach";
+document.write(favoriteFood);
+
 
