@@ -16,4 +16,7 @@ document.write(doubleSize)
 let favoriteFood = "Spinach";
 document.write(favoriteFood);
 
+let color ="red"
+document.write(color);
+
 
