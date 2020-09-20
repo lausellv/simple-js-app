@@ -1,0 +1,10 @@
+body {
+    background-color: #cbcbe6;
+    font-family: "Inconsolata", monospace;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.6;
+    color: red;
+    /* sets the line height to 1.6 */
+  }
+
