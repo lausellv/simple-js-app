@@ -19,10 +19,10 @@ pokemonList[2].name = 'Charizard'
 pokemonList[0].type = ["grass", 'poison']
 pokemonList[1].type = ["grass", 'poison']
 pokemonList[2].type = ["fire", 'flying']
-// lets add the height
-pokemonList[0].height = '0.7m'
-pokemonList[1].height = '1m'
-pokemonList[2].height = '1.7m'
+// lets add the height  // these height values were string values but I needed number variables (since I don't know how to use parseInt function yet I decided to reassign these values as numeric ones that can be used with the conditional for loop and the if else statement)
+pokemonList[0].height = 0.7
+pokemonList[1].height = 1
+pokemonList[2].height = 1.7
 
 // //version 2
 // // Another possible way could be to create three empty objects (one for each pokemon)
@@ -48,7 +48,7 @@ pokemonList[2].height = '1.7m'
 // //in order to create an array of empty objects
 // let pokemonListVersB = [pokemon1, pokemon2, pokemon3];
 
-// // now I went ahead and entered the info
+// // now I went ahead and entered the info; however, the height values are strings and cannot be used now for JS 1.3 (for loop)
 
 // pokemonListVersB[0].name = 'Charmeleon'
 // pokemonListVersB[0].type = 'fire'
@@ -82,11 +82,24 @@ pokemonList[2].height = '1.7m'
 
 // }
 // second try.  changed to i<3
-for (var i=0; i<3; i++ ){
+// for (var i=0; i<3; i++ ){
   
-  console.log(pokemonList[i].name + ' ' + ' (' + 'type:' + pokemonList[i].type + ') '
-   + '(' + 'height:' + pokemonList[i].height + ')' );
-   document.write('\\ ' + pokemonList[i].name + ' ' + ' (' + 'type:' + pokemonList[i].type + ') '
-   + '(' + 'height:' + pokemonList[i].height + ')  ');
+//   console.log(pokemonList[i].name + ' ' + ' (' + 'type:' + pokemonList[i].type + ') '
+//    + '(' + 'height:' + pokemonList[i].height + ')' );
+//    document.write('\\ ' + pokemonList[i].name + ' ' + ' (' + 'type:' + pokemonList[i].type + ') '
+//    + '(' + 'height:' + pokemonList[i].height + ')  ');
 
+// }
+
+// final try worked it out in repl.it (https://repl.it/join/knoskiui-lausellv)
+for (let i = 0; i< 3; i++){
+  if (pokemonList[i].height <= 1) {
+  document.write(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' +'(height: ' + pokemonList[i].height +'m)'+ ' - That\'s small. ' + "<br>");
+   // document.write("<br>"); no need to have it in a separate code line
+    console.log(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' +'(height: ' + pokemonList[i].height +'m)'+ ' - That\'s small. ');
+}
+else {
+ document.write(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' + '(height: ' + pokemonList[i].height +'m)'+ ' - Wow, that\'s tall!');
+ console.log(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' + '(height: ' + pokemonList[i].height +'m)'+ ' - Wow, that\'s tall!');
+}
 }
