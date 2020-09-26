@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: #cbcbe6;
     font-family: "Inconsolata", monospace;
     font-weight: 700;
@@ -6,5 +6,25 @@ body {
     line-height: 1.6;
     color: red;
     /* sets the line height to 1.6 */
+  /* }  */ 
+
+  /* final version. added inline-block display and a few more attributes to make it look nicer */
+  body {
+    background-color: hsl(0, 0%, 0%);
+    font-family: "Inconsolata", monospace;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 3;
+    color: rgb(255, 255, 255);
+    /* border: .05px;
+    border-color: #000;
+    border-style: solid; */
+    border: 0.5px solid #fff;
+    display: inline-block;
+    cursor: pointer;
+    padding: 20px;
+    margin: 20px;
+    text-transform: uppercase;
+
   }
 
