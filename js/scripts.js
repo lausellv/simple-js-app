@@ -5,24 +5,70 @@
 
 // IN the end I opted out for the following formula. Seems much easier. 
 
-let pokemonList = [
-  { name: {}}, { type: {}}, {height:{}}, 
-  { name: {}}, { type: {}}, {height:{}},
-  { name: {}}, { type: {}}, {height:{}},
-];
+// let pokemonList = [
+//   { name: {}}, { type: {}}, {height:{}}, 
+//   { name: {}}, { type: {}}, {height:{}},
+//   { name: {}}, { type: {}}, {height:{}},
+// ];
 
-// Now I have to add names, types and height to these pokemons  (searched for them on https://pokedex.org/.)
-pokemonList[0].name = 'Bulbasaur'
-pokemonList[1].name = 'Ivysaur'
-pokemonList[2].name = 'Charizard'
-// Lets add the type
-pokemonList[0].type = ["grass", 'poison']
-pokemonList[1].type = ["grass", 'poison']
-pokemonList[2].type = ["fire", 'flying']
-// lets add the height  // these height values were string values but I needed number variables (since I don't know how to use parseInt function yet I decided to reassign these values as numeric ones that can be used with the conditional for loop and the if else statement)
-pokemonList[0].height = 0.7
-pokemonList[1].height = 1
-pokemonList[2].height = 1.7
+// // Now I have to add names, types and height to these pokemons  (searched for them on https://pokedex.org/.)
+// pokemonList[0].name = 'Bulbasaur'
+// pokemonList[1].name = 'Ivysaur'
+// pokemonList[2].name = 'Charizard'
+// // Lets add the type
+// pokemonList[0].type = ["grass", 'poison']
+// pokemonList[1].type = ["grass", 'poison']
+// pokemonList[2].type = ["fire", 'flying']
+// // lets add the height  // these height values were string values but I needed number variables (since I don't know how to use parseInt function yet I decided to reassign these values as numeric ones that can be used with the conditional for loop and the if else statement)
+// pokemonList[0].height = 0.7
+// pokemonList[1].height = 1
+// pokemonList[2].height = 1.7
+
+// Hey Victor,
+
+// All of your options are valid options, but I do notice that you wrote a lot of code that could be indeed simplified, a lot of times though, the style of writing code is very subjective and depends on the project guidelines, but i'll show you the approach I would have taken and why.
+
+// First we start with a completely empty array
+let pokemonList = []; // no need to add anything now
+
+// Then we can use the Array.push function to add things
+pokemonList.push({
+  name: 'Bulbasaur',
+  type: ["grass", 'poison'],
+  height: 0.7
+});
+
+pokemonList.push({
+  name: 'Ivysaur',
+  type: ["grass", 'poison'],
+  height: 1
+});
+
+pokemonList.push({
+  name: 'Charizard',
+  type: ["fire", 'flying'],
+  height: 1.7
+});
+
+
+// then repeat for each pokemon
+
+
+
+ // now , I can use i < pokemonList.length :-) before I wasn't able bc It went through nine loops . I had to use i>0 instead
+  
+ for (let i = 0; i< pokemonList.length; i++){
+   if (pokemonList[i].height <= 1) {
+   document.write(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' +'(height: ' + pokemonList[i].height +'m)'+ ' - That\'s small. ' + "<br>");
+    // document.write("<br>"); no need to have it in a separate code line
+     console.log(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' +'(height: ' + pokemonList[i].height +'m)'+ ' - That\'s small. ');
+}
+  else {
+    document.write(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' + '(height: ' + pokemonList[i].height +'m)'+ ' - Wow, that\'s tall!');
+    console.log(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' + '(height: ' + pokemonList[i].height +'m)'+ ' - Wow, that\'s tall!');
+}
+}
+
 
 // //version 2
 // // Another possible way could be to create three empty objects (one for each pokemon)
@@ -92,14 +138,14 @@ pokemonList[2].height = 1.7
 // }
 
 // final try worked it out in repl.it (https://repl.it/join/knoskiui-lausellv)
-for (let i = 0; i< 3; i++){
-  if (pokemonList[i].height <= 1) {
-  document.write(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' +'(height: ' + pokemonList[i].height +'m)'+ ' - That\'s small. ' + "<br>");
-   // document.write("<br>"); no need to have it in a separate code line
-    console.log(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' +'(height: ' + pokemonList[i].height +'m)'+ ' - That\'s small. ');
-}
-else {
- document.write(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' + '(height: ' + pokemonList[i].height +'m)'+ ' - Wow, that\'s tall!');
- console.log(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' + '(height: ' + pokemonList[i].height +'m)'+ ' - Wow, that\'s tall!');
-}
-}
+// for (let i = 0; i< 3; i++){
+//   if (pokemonList[i].height <= 1) {
+//   document.write(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' +'(height: ' + pokemonList[i].height +'m)'+ ' - That\'s small. ' + "<br>");
+//    // document.write("<br>"); no need to have it in a separate code line
+//     console.log(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' +'(height: ' + pokemonList[i].height +'m)'+ ' - That\'s small. ');
+// }
+// else {
+//  document.write(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' + '(height: ' + pokemonList[i].height +'m)'+ ' - Wow, that\'s tall!');
+//  console.log(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' + '(height: ' + pokemonList[i].height +'m)'+ ' - Wow, that\'s tall!');
+// }
+// }
