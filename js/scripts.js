@@ -69,6 +69,72 @@ pokemonList.push({
 }
 }
 
+//JS 1.5 Part 1 
+document.write('<h3>==== JS 1.5 Part 1 forEach PokemonList=======</h3>');
+pokemonList.forEach(function(keys){
+  if (keys.height <=1) {
+    document.write ('<p>Name: '+ keys.name + ': Type: ' + keys.type + ',' + ' Height: ' + keys.height + 'm - That\'s small. ' + "</p>");
+  }  else {
+    document.write ('<p>Name: '+ keys.name + ': Type: ' + keys.type + ',' + ' Height: ' + keys.height + 'm - That\'s tall. ' + "</p>");
+  }
+  document.write('<p>  </p>');
+});
+
+//JS 1.5 Part 2 
+document.write('<h3>==== JS 1.5 Part 2 IIFE=======</h3>');
+
+var pokemonRepository = (function () {
+  var pokemonList =[{
+  name: 'Bulbasaur',
+  type: ["grass", 'poison'],
+  height: 0.7
+},{
+  name: 'Ivysaur',
+  type: ["grass", 'poison'],
+  height: 1
+}, {
+  name: 'Charizard',
+  type: ["fire", 'flying'],
+  height: 1.7
+} ];
+
+var butterfree = {name: 'Butterfree',type: ['bug', 'flying'], height: 1.1}; 
+pokemonRepository+= (add(butterfree));
+
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  function getAll () {
+    return pokemonList;
+  }
+
+  return {
+    add: add,
+    getAll: getAll, 
+  };
+
+pokemonList.forEach(function(property) {
+  console.log(pokemonList.name);});  //Not getting any reaction
+
+console.log(butterfree);
+
+
+}());
+
+
+console.log (pokemonRepository.getAll());  // this returns the array in the console
+//document.write(pokemonRepository.getAll());  // this returns [object Object],[object Object],[object Object],[object Object]
+
+// I would like to print out a list of the pokemons :-(
+  pokemonRepository.getAll().forEach(function(keys){
+    if (keys.height <=1) {
+      document.write ('<p>Name: '+ keys.name + ': Type: ' + keys.type + ',' + ' Height: ' + keys.height + 'm - That\'s small. ' + "</p>");
+    }  else {
+      document.write ('<p>Name: '+ keys.name + ': Type: ' + keys.type + ',' + ' Height: ' + keys.height + 'm - That\'s tall. ' + "</p>");
+    }
+    document.write('<p>  </p>');
+  });
 
 // //version 2
 // // Another possible way could be to create three empty objects (one for each pokemon)
@@ -149,3 +215,4 @@ pokemonList.push({
 //  console.log(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' + '(height: ' + pokemonList[i].height +'m)'+ ' - Wow, that\'s tall!');
 // }
 // }
+
