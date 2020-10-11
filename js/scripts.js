@@ -136,6 +136,16 @@ console.log (pokemonRepository.getAll());  // this returns the array in the cons
     document.write('<p>  </p>');
   });
 
+  var pokemons = [
+    {name: 'Charmeleon',
+   type: 'fire',
+     height: 1.1
+   }, {name:'Rattata',
+   type: 'normal',
+   height: 0.3}];
+  
+   console.log(pokemons);  // this won't come out on repl. but it does on the web console.
+
 // //version 2
 // // Another possible way could be to create three empty objects (one for each pokemon)
 
@@ -215,4 +225,5 @@ console.log (pokemonRepository.getAll());  // this returns the array in the cons
 //  console.log(pokemonList[i].name + ': (type:' + pokemonList[i].type + '), ' + '(height: ' + pokemonList[i].height +'m)'+ ' - Wow, that\'s tall!');
 // }
 // }
+
 
