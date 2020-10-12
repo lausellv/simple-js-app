@@ -117,24 +117,15 @@ pokemonRepository+= (add(butterfree));
 pokemonList.forEach(function(property) {
   console.log(pokemonList.name);});  //Not getting any reaction
 
-console.log(butterfree);
+//console.log(butterfree); nothing happened
 
 
 }());
 
 
-console.log (pokemonRepository.getAll());  // this returns the array in the console
+//console.log (pokemonRepository.getAll());  // this returns the array in the console
 //document.write(pokemonRepository.getAll());  // this returns [object Object],[object Object],[object Object],[object Object]
 
-// I would like to print out a list of the pokemons :-(
-  pokemonRepository.getAll().forEach(function(keys){
-    if (keys.height <=1) {
-      document.write ('<p>Name: '+ keys.name + ': Type: ' + keys.type + ',' + ' Height: ' + keys.height + 'm - That\'s small. ' + "</p>");
-    }  else {
-      document.write ('<p>Name: '+ keys.name + ': Type: ' + keys.type + ',' + ' Height: ' + keys.height + 'm - That\'s tall. ' + "</p>");
-    }
-    document.write('<p>  </p>');
-  });
 
   var pokemons = [
     {name: 'Charmeleon',
@@ -145,6 +136,31 @@ console.log (pokemonRepository.getAll());  // this returns the array in the cons
    height: 0.3}];
   
    console.log(pokemons);  // this won't come out on repl. but it does on the web console.
+
+   var pokemon1 = 
+   {name: 'Charmeleon',
+  type: 'fire',
+    height: 1.1
+  };
+
+  var pokemon2 = {name:'Rattata',
+  type: 'normal',
+  height: 0.3};
+ // I can't figure out how to add an array (pokemons) to the list so I went ahead and did so as two separate objects (pokemon1 and pokemon2)
+  pokemonRepository.add(pokemon1);
+  pokemonRepository.add(pokemon2);
+
+  // I would like to print out a list of the pokemons 
+  pokemonRepository.getAll().forEach(function(keys){
+    if (keys.height <=1) {
+      document.write ('<p>Name: '+ keys.name + ': Type: ' + keys.type + ',' + ' Height: ' + keys.height + 'm - That\'s small. ' + "</p>");
+    }  else {
+      document.write ('<p>Name: '+ keys.name + ': Type: ' + keys.type + ',' + ' Height: ' + keys.height + 'm - That\'s tall. ' + "</p>");
+    }
+    document.write('<p>  </p>');
+  });
+
+  
 
 // //version 2
 // // Another possible way could be to create three empty objects (one for each pokemon)
