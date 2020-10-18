@@ -99,8 +99,8 @@ var pokemonRepository = (function () {
 } ];
 
 var butterfree = {name: 'Butterfree',type: ['bug', 'flying'], height: 1.1}; 
-pokemonRepository+= (add(butterfree));
-
+//pokemonRepository+= (add(butterfree));
+add(butterfree);
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
@@ -108,16 +108,18 @@ pokemonRepository+= (add(butterfree));
   function getAll () {
     return pokemonList;
   }
-
+  // pokemonList.forEach(function(property) {
+  //   console.log(pokemonList.name);
+  //   console.log(butterfree);});
+    
   return {
     add: add,
     getAll: getAll, 
   };
 
-pokemonList.forEach(function(property) {
-  console.log(pokemonList.name);});  //Not getting any reaction
+  //Not getting any reaction
 
-//console.log(butterfree); nothing happened
+// nothing happened
 
 
 }());
