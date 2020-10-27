@@ -1,7 +1,7 @@
 //I started doing this but then I realized I can include the empty objects in the array and modify them afterward.  
 // the exercise calls for an empty array so I created one that's empty bc the objects haven't been defined.
 
-
+//checking to see if I created a branch using VS code correctly
 
 // IN the end I opted out for the following formula. Seems much easier. 
 
@@ -24,7 +24,7 @@
 // pokemonList[1].height = 1
 // pokemonList[2].height = 1.7
 
-// Hey Victor,
+//Hey Victor,
 
 // All of your options are valid options, but I do notice that you wrote a lot of code that could be indeed simplified, a lot of times though, the style of writing code is very subjective and depends on the project guidelines, but i'll show you the approach I would have taken and why.
 
